@@ -1,0 +1,10 @@
+ring_create: O(1)
+ring_size: O(1)
+ring_enqueue:O(1)
+ring_dequeue:O(1)
+ring_apply_fir: O(n) (for loop)
+ring_free: O(1)
+
+Ring buffers are a favorable data structure because their most intense methods are time complexity O(1), without any loops required. This makes the time to search, add and delete elements very fast, and memory effiencent, since there is a finite space that can be used.
+
+I think that the filter was effective at reducing noise, but the more you multiply values in the circular array, the slower the algorithm will become. This makes it a little trickier to handle memory, especially for embedded systems that have a finite space. Nevertheless, it is a good strategy for reducing noise.

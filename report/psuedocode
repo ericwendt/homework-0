@@ -1,0 +1,44 @@
+Pseudo code:
+
+Method: ring_size(int size)
+	if: ring = NULL
+	> return -1
+
+	else if: read = write
+	>return 0
+
+	else: return length
+
+
+Method ring_enqueue(ring, data)
+
+	if: ring = NULL or ring_size = size
+	>return -1
+	
+	data[write] = data
+
+	if: write = size
+	>write = 0
+	>length ++
+	>return 0
+
+method: ring_deuque(ring , *datap)
+
+	if: ring = NULL or read = write
+	> return -1
+	short temp
+	
+	else:temp = data[read]
+	     read = (read +1) % size
+	     *datap = temp
+	     length --
+	     return 0
+
+method: ring_apply_fir(*ring, *weights)
+
+	if: ring = NULL or ring_size != size
+		return 0
+	else: int sum
+		for: i =0, i goes to size
+			sum = sum + weights[i] * data[read +i]
+		return sum
